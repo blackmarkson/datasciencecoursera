@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1450520979097.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6504CEF5",
+    "lastKnownWriteTime" : 31244048835477601,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "3rem0grabd",
+        "caption" : "pollutantstuff",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=pollutantstuff&cache_key=3rem0grabd",
+        "displayedObservations" : "7304",
+        "environment" : "",
+        "object" : "pollutantstuff",
+        "totalObservations" : "7304",
+        "variables" : "4"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

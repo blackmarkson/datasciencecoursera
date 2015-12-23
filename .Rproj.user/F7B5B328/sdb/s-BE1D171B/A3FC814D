@@ -1,0 +1,18 @@
+{
+    "contents" : "complete <- function(directory, id = 1:332) {\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'id' is an integer vector indicating the monitor ID numbers\n  ## to be used\n  \n  ## Return a data frame of the form:\n  ## id nobs\n  ## 1  117\n  ## 2  1041\n  ## ...\n  ## where 'id' is the monitor ID number and 'nobs' is the\n  ## number of complete cases\n  # get a list of files inthe directory\n  directory <- paste(directory, \"/\", sep=\"\")\n  files <- list.files(directory)\n# create empty return vector  \n  nobservations <- data.frame(id = integer(0), nobs = integer(0))\n  for (testID in id) {\n    for (file in files) {\n      path <- paste(directory, file, sep=\"\")\n      fileid <- as.numeric(substr(file,1,3))\n      if (fileid %in% testID) {\n#         add number of full observations to the return vector        \n          pollutants <- read.csv(path)\n          pollutants <- subset(pollutants,!is.na(sulfate) & !is.na(nitrate))\n          nobservations = rbind(nobservations, c(fileid, nrow(pollutants)))\n      }\n    }\n  }\n  colnames(nobservations) <- c(\"id\", \"nobs\")\n  nobservations\n}",
+    "created" : 1450530774915.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "233000784",
+    "id" : "A3FC814D",
+    "lastKnownWriteTime" : 1450604280,
+    "path" : "C:/Users/kris/Desktop/coursera/complete.R",
+    "project_path" : "complete.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

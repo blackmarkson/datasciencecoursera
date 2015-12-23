@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1450586393277.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5659025F",
+    "lastKnownWriteTime" : 31244048835477601,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "xyhehxpudm",
+        "caption" : "poll5000",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=poll5000&cache_key=xyhehxpudm",
+        "displayedObservations" : 77026,
+        "environment" : "",
+        "object" : "poll5000",
+        "totalObservations" : 77026,
+        "variables" : 4
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

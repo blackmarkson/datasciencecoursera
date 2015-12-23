@@ -1,0 +1,18 @@
+{
+    "contents" : "pollutantmean <- function(directory, pollutant, id = 1:332) {\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'pollutant' is a character vector of length 1 indicating\n  ## the name of the pollutant for which we will calculate the\n  ## mean; either \"sulfate\" or \"nitrate\".\n  \n  ## 'id' is an integer vector indicating the monitor ID numbers\n  ## to be used\n  \n  ## Return the mean of the pollutant across all monitors list\n  ## in the 'id' vector (ignoring NA values)\n  # get a list of files inthe directory  \n  directory <- paste(directory, \"/\", sep=\"\")\n  files <- list.files(directory)\n  for (file in files) { # iterate through file list\n    path <- paste(directory, file, sep=\"\")\n    fileid <- as.numeric(substr(file,1,3))\n    if (fileid %in% id) { # if file in input parameters\n      # incorporate data from this file \n      if (!exists(\"pollutants\")){\n        pollutants <- read.csv(path)\n      }\n      else {\n       # if pollutants exists then append to it\n        pollutants<-rbind(pollutants, read.csv(path))  \n      }\n    }\n  }\n  mean(pollutants[[pollutant]],na.rm=TRUE) #return mean\n}\n",
+    "created" : 1450515089848.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3019864731",
+    "id" : "ED30FF0C",
+    "lastKnownWriteTime" : 1450604443,
+    "path" : "C:/Users/kris/Desktop/coursera/pollutantmean.R",
+    "project_path" : "pollutantmean.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

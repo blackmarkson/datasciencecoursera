@@ -1,0 +1,18 @@
+{
+    "contents" : "corr <- function(directory, threshold = 0) {\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'threshold' is a numeric vector of length 1 indicating the\n  ## number of completely observed observations (on all\n  ## variables) required to compute the correlation between\n  ## nitrate and sulfate; the default is 0\n  \n  ## Return a numeric vector of correlations\n  ## NOTE: Do not round the result!\n  # get a list of files inthe directory\n  directory <- paste(directory, \"/\", sep=\"\")\n  files <- list.files(directory)\n  correllations <- numeric() # the empty correlation vector\n  for (file in files) {\n    path <- paste(directory, file, sep=\"\")\n    pollutants <- read.csv(path) # read the next file in the list\n    pollutants <- subset(pollutants,!is.na(sulfate) & !is.na(nitrate)) # ignore NAs\n    if (nrow(pollutants) > threshold) { # threshold met\n      print(nrow(pollutants))\n      # append correlation for this file\n      correllations <- append(correllations, cor(pollutants[,2], pollutants[,3])) \n    }\n  }\n  correllations\n}",
+    "created" : 1450584377459.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3087375120",
+    "id" : "9F8D92B1",
+    "lastKnownWriteTime" : 1450603287,
+    "path" : "C:/Users/kris/Desktop/coursera/corr.R",
+    "project_path" : "corr.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
